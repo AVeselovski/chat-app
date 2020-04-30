@@ -1,0 +1,6 @@
+<span class="<%= "msg-pill msg-pill--#{current_user == message.user ? 'self' : 'them'}" %>">
+  <% if current_user != message.user %>
+    <small><%= message.user.username %></small>
+  <% end %>
+  <%= message.body %>
+</span>

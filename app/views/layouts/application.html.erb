@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Chat App</title>
+    <title>Crap Chat</title>
 
     <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
@@ -15,6 +15,7 @@
     <%= render 'layouts/header' %>
     <div class="container-fluid">
       <%= yield %>
+      <%= render 'layouts/flash_messages' if !flash.empty? %>
     </div>
   </body>
 </html>

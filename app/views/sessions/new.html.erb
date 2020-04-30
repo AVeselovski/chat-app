@@ -1,1 +1,42 @@
-<h1>New session</h1>
+<%= render 'shared/app_title' %>
+
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-5">
+        <%= form_for(:session, url: login_path) do |f| %>
+          <div class="form-group">
+            <%= f.label :username %>
+            <%= f.text_field :username, class: "form-control #{'is-invalid' if flash[:danger]}", autofocus: true, "aria-describedby": 'usernameHelp' %>
+            <% if flash[:danger] %>
+              <small id="usernameHelp" class="invalid-feedback"><%= flash[:danger] %></small>
+            <% else %>
+              <small id="usernameHelp" class="form-text text-muted">No one cares enough to share this.</small>
+            <% end %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, class: "form-control #{'is-invalid' if flash[:danger]}" %>
+            <% if flash[:danger] %>
+              <small id="usernameHelp" class="invalid-feedback"><%= flash[:danger] %></small>
+            <% end %>
+          </div>
+          <%= f.submit "Log In", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <div class="col-2">
+        <div class="flex-container flex-container--col divider">
+          <hr>
+          <img src="<%= image_path('icon.png') %>" class="rounded img-fluid" alt="...">
+          <hr>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="flex-container flex-container--col">
+          <h4 class="mb-4 text-center">Sign up for this utterly useless crap chat service!</h4>
+          <button class="btn btn-success btn-lg">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
