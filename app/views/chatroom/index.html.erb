@@ -2,13 +2,13 @@
   <%= render 'shared/app_title' %>
 
   <div class="row">
-    <div class="col-8">
+    <div class="col-12">
       <div class="card">
-        <div class="card-body feed">
+        <div class="card-body feed" id="msg-feed">
           <%= render @messages %>
         </div>
         <div class="card-footer bg-transparent">
-          <%= form_for(@message, url: message_path) do |f| %>
+          <%= form_for(@message, url: message_path, remote: true) do |f| %>
             <div class="input-group">
               <%= f.text_field :body,
                   class: "form-control",
@@ -22,17 +22,6 @@
             </div>
           <% end %>
         </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Cras justo odio</li>
-          <li class="list-group-item">Dapibus ac facilisis in</li>
-          <li class="list-group-item">Morbi leo risus</li>
-          <li class="list-group-item">Porta ac consectetur ac</li>
-          <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
       </div>
     </div>
   </div>

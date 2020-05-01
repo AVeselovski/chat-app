@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Crap Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
@@ -17,5 +18,9 @@
       <%= yield %>
       <%= render 'layouts/flash_messages' if !flash.empty? %>
     </div>
+
+    <%= javascript_tag do %>
+      window.appUserId = '<%= current_user.id if current_user %>';
+    <% end %>
   </body>
 </html>

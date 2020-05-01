@@ -1,6 +1,7 @@
-<span class="<%= "msg-pill msg-pill--#{current_user == message.user ? 'self' : 'them'}" %>">
+<div class="<%= "msg-pill msg-pill--#{current_user == message.user ? 'self' : 'them'}" %>">
   <% if current_user != message.user %>
     <small><%= message.user.username %></small>
   <% end %>
   <%= message.body %>
-</span>
+  <span class="msg-date"><%= message.created_at.strftime("%d.%m.%y %T") %></span>
+</div>

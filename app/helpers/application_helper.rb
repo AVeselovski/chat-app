@@ -4,7 +4,7 @@ module ApplicationHelper
     when "danger"
       "Crap!"
     when "warning"
-      "Nah..."
+      "Umm..."
     else
       "Nice..."
     end

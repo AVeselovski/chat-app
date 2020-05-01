@@ -7,12 +7,25 @@ require('@rails/activestorage').start()
 require('channels')
 require('bootstrap')
 
+const { scrollToBottom } = require('../js/helpers')
+
 // Initialize Bootstrap 4 utils
 document.addEventListener('turbolinks:load', () => {
-  // $('[data-toggle="tooltip"]').tooltip()
+  scrollToBottom()
+
   $('.alert').alert()
 
   setTimeout(() => {
     $('.alert').removeClass('show')
   }, 5000)
+
+  const newMsgForm = document.querySelector("#new_message")
+  // LoL, horrible...
+  if (newMsgForm) {
+    newMsgForm.addEventListener("submit", e => {
+      setTimeout(() => {
+        e.target[0].value = ""
+      });
+    })
+  }
 })
