@@ -11,7 +11,7 @@
             <% if flash[:danger] %>
               <small id="usernameHelp" class="invalid-feedback"><%= flash[:danger] %></small>
             <% else %>
-              <small id="usernameHelp" class="form-text text-muted">No one cares enough to share this.</small>
+              <small id="usernameHelp" class="form-text text-muted"><%= t('sessions.username_info') %></small>
             <% end %>
           </div>
           <div class="form-group">
@@ -21,7 +21,7 @@
               <small id="usernameHelp" class="invalid-feedback"><%= flash[:danger] %></small>
             <% end %>
           </div>
-          <%= f.submit "Log In", class: "btn btn-primary" %>
+          <%= f.submit t('sessions.login'), class: "btn btn-primary" %>
         <% end %>
       </div>
       <div class="col-xs-12 col-md-2">
@@ -33,8 +33,8 @@
       </div>
       <div class="col-xs-12 col-md-5">
         <div class="flex-container flex-container--col py-3">
-          <h4 class="mb-4 text-center">Sign up for this utterly useless crap chat service!</h4>
-          <%= link_to "Sign Up", new_user_path, class: "btn btn-success btn-lg" %>
+          <h4 class="mb-4 text-center"><%= t('sessions.sign_up_for_service') %></h4>
+          <%= link_to t('sessions.register'), new_user_path, class: "btn btn-success btn-lg" %>
         </div>
       </div>
     </div>

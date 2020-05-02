@@ -13,11 +13,11 @@
               <%= f.text_field :body,
                   class: "form-control",
                   autofocus: true,
-                  placeholder: "Message...",
-                  "aria-label": "Message...",
+                  placeholder: t('ui.message'),
+                  "aria-label": t('ui.message'),
                   "aria-describedby": "button-addon" %>
               <div class="input-group-append">
-                <%= f.submit "Crap", class: "btn btn-outline-success", id: "button-addon" %>
+                <%= f.submit t('ui.send'), class: "btn btn-outline-success", id: "button-addon" %>
               </div>
             </div>
           <% end %>

@@ -3,5 +3,5 @@
     <small><%= message.user.username %></small>
   <% end %>
   <%= message.body %>
-  <span class="msg-date"><%= message.created_at.strftime("%d.%m.%y %T") %></span>
+  <span class="msg-date"><%= message.created_at.localtime.strftime("%d.%m.%y %k:%M") %></span>
 </div>

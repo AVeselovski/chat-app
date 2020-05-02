@@ -21,6 +21,7 @@ consumer.subscriptions.create('ChatroomChannel', {
       msgPill.append(`<small>${data.user}</small>`)
     }
     msgPill.append(data.message.body)
+    msgPill.append(`<span class="msg-date">Just now...</span>`)
     feed.append(msgPill)
 
     scrollToBottom()

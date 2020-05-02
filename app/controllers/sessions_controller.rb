@@ -8,17 +8,17 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      flash[:success] = "Succesfully logged in!"
+      flash[:success] = t('flash.logged_in')
       redirect_to root_path
     else
-      flash.now[:danger] = "Wrong credentials!"
+      flash.now[:danger] = t('flash.wrong_credentials')
       render 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:success] = "Succesfully logged out!"
+    flash[:success] = t('flash.logged_out')
     redirect_to login_path
   end
 
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
 
   def redirect_logged_in
     if logged_in?
-      flash[:warning] = "You good..."
+      flash[:warning] = t('flash.you_good')
       redirect_to root_path
     end
   end

@@ -6,7 +6,7 @@
   <ul class="navbar-nav ml-auto">
     <% if logged_in? %>
       <li class="nav-item">
-        <%= link_to 'Log Out',
+        <%= link_to t('sessions.logout'),
             logout_path,
             method: :delete,
             class: "nav-link text-danger" %>

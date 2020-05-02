@@ -30,4 +30,24 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  sessions: 
+    sign_up_for_service: "Sign up for this crap service!"
+    login_for_service: "Already crapping? Log in now!"
+    username_info: "No one cares enough to share this."
+    username: "Username"
+    password: "Password"
+    login: "Log In"
+    register: "Register"
+    logout: "Log Out"
+  flash:
+    danger: "Crap!"
+    warning: "Umm..."
+    success: "Nice..."
+    registered: "Start crapping!"
+    logged_in: "Succesfully logged in!"
+    logged_out: "Succesfully logged out!"
+    you_good: "You good..."
+    wrong_credentials: "Wrong credentials!"
+  ui:
+    message: "Message..."
+    send: "Send"
